@@ -1,0 +1,27 @@
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<%= form_with(model: @user, url: '/signup', method: 'post') do |f| %>
+    <%= f.label :name %>:
+    <%= f.text_field :name %><br><br>
+
+    <%= f.label :username %>:
+    <%= f.text_field :username %><br><br>
+
+    <%= f.label :password %>:
+    <%= f.password_field :password %><br><br>
+
+    <%=f.label :password_confirmation %>:
+    <%=f.password_field :password_confirmation%><br><br>
+    
+    <%= f.submit 'Sign Up' %>
+<% end %>
