@@ -6,8 +6,9 @@ class ExercisesController < ApplicationController
     end
 
     def create
-        @exercise = Exercise.new(exercise_params)
+        @exercise = current_user.exercises.build(exercise_params)
         if @exercise.save
+            
             redirect_to exercise_path(@exercise)
         else
             render :new
@@ -27,4 +28,8 @@ class ExercisesController < ApplicationController
     end
 
     private
+
+    def exercise_params
+        params.require(:exercise).permit(:name, :reps, :sets)
+    end
 end

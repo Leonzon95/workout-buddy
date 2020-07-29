@@ -1,1 +1,12 @@
-<%= form_for exercise %>
+<%= form_for exercise do |f| %>
+    <%= f.label :name, 'Name:' %>
+    <%= f.text_field :name %>
+
+    <%= f.label :reps, 'Reps/Time:' %>
+    <%= f.text_field :reps %>
+
+    <%= f.label :sets, 'Sets:' %>
+    <%= f.text_field :sets %>
+
+    <%= f.submit %>
+<% end %>
