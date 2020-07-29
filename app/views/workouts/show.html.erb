@@ -4,6 +4,8 @@
 
 <%= link_to 'Add to Calendar', new_workout_scheduled_workout_path(@workout) %><br>
 
+<%= link_to 'Delete Workout', @workout, method: :delete %><br>
+
 Categories: <% @workout.categories.each do |c| %>
                 <%= c.name %>
             <% end %><br>
