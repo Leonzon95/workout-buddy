@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :exercises
-  resources :workouts
+  
+  resources :workouts do 
+    resources :exercises, only: [:new, :create, :edit, :update, :show]
+  end
+  resources :exercises, only: [:index, :show]
+
   resources :categories
   resources :users, only: [:show]
   get '/signup', to: 'users#new'

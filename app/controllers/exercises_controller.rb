@@ -1,6 +1,7 @@
 class ExercisesController < ApplicationController
     before_action :login_required
     before_action :set_exercise, only: [:show, :update, :edit, :destroy]
+    before_action :set_workout, only: [:new, :create, :show, :update, :edit, :destroy]
 
     def new
         @exercise = Exercise.new
@@ -10,7 +11,7 @@ class ExercisesController < ApplicationController
         @exercise = current_user.exercises.build(exercise_params)
         if @exercise.save
             
-            redirect_to exercise_path(@exercise)
+            redirect_to workout_path(@workout)
         else
             render :new
         end
@@ -41,6 +42,10 @@ class ExercisesController < ApplicationController
 
     def exercise_params
         params.require(:exercise).permit(:name, :reps, :sets)
+    end
+
+    def set_workout
+        @workout = Workout.find_by_id(params[:workout_id])
     end
 
     def set_exercise
