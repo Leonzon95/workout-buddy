@@ -1,5 +1,19 @@
 <h2> <%= @workout.name %></h2>
 <% @workout.categories.each do |c| %>
     <%= c.name %>
-<% end %>
+<% end %><br>
 Private: <%= @workout.is_private %>
+<h4>Exercises</h2>
+<ul>
+    <% @workout.exercises.each do |exercise| %>
+        <li>
+            <ul>
+                <li><h4><%= exercise.name %></h4></li>
+                <li>Reps/Time: <%= exercise.reps %></li>
+                <li>Sets: <%= exercise.sets %></li>
+            </ul>
+        </li>
+    <% end %>
+</ul>
+
+<%= link_to 'Add Exercise', new_workout_exercise_path(@workout) %>

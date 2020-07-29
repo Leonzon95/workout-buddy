@@ -9,6 +9,7 @@ class ExercisesController < ApplicationController
 
     def create
         @exercise = current_user.exercises.build(exercise_params)
+        @exercise.workouts << @workout
         if @exercise.save
             
             redirect_to workout_path(@workout)
