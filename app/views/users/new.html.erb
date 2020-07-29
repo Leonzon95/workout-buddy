@@ -1,8 +1,9 @@
 <h1> Sign Up </h1>
 
 <%= render partial: 'errors', locals: {user: @user} %>
+
 <%= button_to "Log in with Google", '/auth/google_oauth2'  %><br><br>
-<%= form_with(model: @user, url: '/signup', method: 'post') do |f| %>
+<%= form_with(model: @user, url: '/signup', method: 'post', local: true) do |f| %>
     <%= f.label :name %>:
     <%= f.text_field :name %><br><br>
 
