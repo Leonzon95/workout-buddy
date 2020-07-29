@@ -1,3 +1,5 @@
-<%= @workout.name %>
-<%= @workout.category.name %>
-<%= @workout.is_private %>
+<h2> <%= @workout.name %></h2>
+<% @workout.categories.each do |c| %>
+    <%= c.name %>
+<% end %>
+Private: <%= @workout.is_private %>

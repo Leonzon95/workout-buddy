@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_031751) do
+ActiveRecord::Schema.define(version: 2020_07_29_170346) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "category_workouts", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.integer "workout_id", null: false
+    t.index ["category_id"], name: "index_category_workouts_on_category_id"
+    t.index ["workout_id"], name: "index_category_workouts_on_workout_id"
   end
 
   create_table "exercise_workouts", force: :cascade do |t|
@@ -59,17 +66,16 @@ ActiveRecord::Schema.define(version: 2020_07_29_031751) do
 
   create_table "workouts", force: :cascade do |t|
     t.string "name"
-    t.integer "category_id", null: false
-    t.string "is_private", default: "t"
+    t.boolean "is_private", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_workouts_on_category_id"
   end
 
+  add_foreign_key "category_workouts", "categories"
+  add_foreign_key "category_workouts", "workouts"
   add_foreign_key "exercise_workouts", "exercises"
   add_foreign_key "exercise_workouts", "workouts"
   add_foreign_key "exercises", "users"
   add_foreign_key "scheduled_workouts", "users"
   add_foreign_key "scheduled_workouts", "workouts"
-  add_foreign_key "workouts", "categories"
 end
