@@ -1,11 +1,17 @@
 <h2> <%= @workout.name %></h2>
+
 <%= link_to 'Edit Workout', edit_workout_path(@workout) %><br>
+
 <%= link_to 'Add to Calendar', new_workout_scheduled_workout_path(@workout) %><br>
+
 Categories: <% @workout.categories.each do |c| %>
                 <%= c.name %>
             <% end %><br>
+
 Private: <%= @workout.is_private %>
+
 <h4>Exercises</h2>
+
 <ul>
     <% @workout.exercises.each do |exercise| %>
         <li>
@@ -13,6 +19,8 @@ Private: <%= @workout.is_private %>
                 <li><h4><%= exercise.name %></h4></li>
                 <li>Reps/Time: <%= exercise.reps %></li>
                 <li>Sets: <%= exercise.sets %></li>
+                <%= link_to 'Edit Exercise', edit_workout_exercise_path(@workout, exercise) %><br>
+                <%= link_to 'Delete Exercise', [@workout, exercise], method: :delete %><br>
             </ul>
         </li>
     <% end %>

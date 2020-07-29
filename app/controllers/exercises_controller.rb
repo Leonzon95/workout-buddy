@@ -28,7 +28,7 @@ class ExercisesController < ApplicationController
 
     def update
         if @exercise.update(exercise_params)
-            redirect_to exercise_path(@exercise)
+            redirect_to workout_path(@workout)
         else
             render :edit
         end
@@ -36,7 +36,7 @@ class ExercisesController < ApplicationController
 
     def destroy
         @exercise.destroy
-        redirect_to root_path
+        redirect_to workout_path(@workout)    
     end
 
     private
