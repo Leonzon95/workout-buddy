@@ -1,5 +1,6 @@
 <h2> <%= @workout.name %></h2>
 <%= link_to 'Edit Workout', edit_workout_path(@workout) %><br>
+<%= link_to 'Add to Calendar', new_workout_scheduled_workout_path(@workout) %><br>
 Categories: <% @workout.categories.each do |c| %>
                 <%= c.name %>
             <% end %><br>

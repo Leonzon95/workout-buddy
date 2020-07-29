@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   resources :workouts do 
     resources :exercises, only: [:new, :create, :edit, :update, :show]
+    resources :scheduled_workouts, only: [:new, :create]
   end
   resources :exercises, only: [:index, :show]
 
