@@ -3,9 +3,23 @@
 <%= form_for workout do |f| %>
     <%= f.label :name, 'Name:' %>
     <%= f.text_field :name %><br>
+
     <%= f.label :category, 'Select all categories that apply' %>
     <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %><br>
+
     <%= f.radio_button :is_private, false %>
     <%= f.label :is_private, 'Public' %><br>
+    <h4>Exercises</h2>
+    <%= f.fields_for :exercises do |s| %>
+        <p><%= s.label :name, 'Name:' %>
+        <%= s.text_field :name %>
+        
+        <%= s.label :reps, 'Reps/Time:' %>
+        <%= s.text_field :reps %>
+
+        <%= s.label :sets, 'Sets:' %>
+        <%= s.text_field :sets %></p>
+    <% end %>
+
     <%= f.submit %>
 <% end %>

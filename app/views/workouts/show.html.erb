@@ -1,7 +1,8 @@
 <h2> <%= @workout.name %></h2>
-<% @workout.categories.each do |c| %>
-    <%= c.name %>
-<% end %><br>
+<%= link_to 'Edit Workout', edit_workout_path(@workout) %><br>
+Categories: <% @workout.categories.each do |c| %>
+                <%= c.name %>
+            <% end %><br>
 Private: <%= @workout.is_private %>
 <h4>Exercises</h2>
 <ul>
