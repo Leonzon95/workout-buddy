@@ -1,2 +1,4 @@
 <h1>Edit Workout</h1>
+<%= render partial: 'partials/errors', locals: {obj: @workout} %>
+
 <%= render partial: 'form', locals: {workout: @workout} %>
