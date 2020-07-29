@@ -1,5 +1,6 @@
 class ExercisesController < ApplicationController
     before_action :login_required
+    before_action :set_exercise, only: [:show, :update, :edit]
 
     def new
         @exercise = Exercise.new
@@ -31,5 +32,9 @@ class ExercisesController < ApplicationController
 
     def exercise_params
         params.require(:exercise).permit(:name, :reps, :sets)
+    end
+
+    def set_exercise
+        Exercise.find_by_id(params[:id])
     end
 end
