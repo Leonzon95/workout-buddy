@@ -1,5 +1,5 @@
 class WorkoutsController < ApplicationController
-    before_action :set_workout, only: [:show, :edit, :update]
+    before_action :set_workout, only: [:show, :edit, :update, :destroy]
     before_action :login_required
 
     def index
@@ -36,7 +36,8 @@ class WorkoutsController < ApplicationController
     end
 
     def destroy
-
+        @workout.destroy
+        redirect_to root_path
     end
 
     private

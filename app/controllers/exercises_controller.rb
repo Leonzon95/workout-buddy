@@ -1,6 +1,6 @@
 class ExercisesController < ApplicationController
     before_action :login_required
-    before_action :set_exercise, only: [:show, :update, :edit]
+    before_action :set_exercise, only: [:show, :update, :edit, :destroy]
 
     def new
         @exercise = Exercise.new
@@ -30,6 +30,11 @@ class ExercisesController < ApplicationController
         else
             render :edit
         end
+    end
+
+    def destroy
+        @exercise.destroy
+        redirect_to root_path
     end
 
     private
