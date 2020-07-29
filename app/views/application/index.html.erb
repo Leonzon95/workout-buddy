@@ -1,9 +1,11 @@
 <%= month_calendar events: @scheduled_workouts do |date, scheduled_workouts| %>
-  <%= date %>
+  <%= date.day %>
 
   <% scheduled_workouts.each do |scheduled_workout| %>
     <div>
-      <%= scheduled_workout.workout.name %>
+      <%= link_to scheduled_workout.workout.name, workout_path(scheduled_workout.workout) %>
     </div>
   <% end %>
 <% end %>
+
+
