@@ -6,7 +6,13 @@ class ScheduledWorkoutsController < ApplicationController
     end
 
     def create
-        
+        @scheduled_workout = current_user.scheduled_workouts.build(scheduled_params)
+        @scheduled_workout.workout = @workout
+        if @scheduled_workout.save
+            redirect_to workout_path(@workout)
+        else
+            render :new
+        end
     end
 
     private 

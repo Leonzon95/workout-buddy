@@ -1,1 +1,5 @@
+<h3>Add <%= @workout.name %> to your calendar </h3>
+
+<%= render partial: 'partials/errors', locals: {obj: @scheduled_workout} %>
+
 <%= render partial: 'form', locals: {scheduled_workout: @scheduled_workout, workout: @workout} %>
