@@ -41,6 +41,10 @@ class WorkoutsController < ApplicationController
         @workouts = Workout.public_workouts
     end
 
+    def scheduled
+        @workouts = current_user.workouts
+    end
+
     def destroy
         if current_user.created_workouts.include?(@workout)
             @workout.destroy

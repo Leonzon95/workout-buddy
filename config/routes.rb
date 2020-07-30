@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#omniauth'
   get '/public-workouts', to: 'workouts#public'
   delete '/logout', to: 'sessions#destroy'
+  get '/scheduled-workouts', to: 'workouts#scheduled'
   match '*unmatched', to: 'application#route_not_found', via: :all
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

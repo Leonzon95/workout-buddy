@@ -2,9 +2,5 @@
 
 <%= link_to 'Create a new Workout plan', new_workout_path %>
 <p>
-<ul>
-<% @workouts.each do |w| %>
-    <li><%= link_to w.name, workout_path(w) %></li>
-<% end %>
-</ul>
+<%= render partial: 'workout_name_link', locals: {workouts: @workouts} %>
 </p>
