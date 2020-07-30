@@ -76,15 +76,5 @@ class WorkoutsController < ApplicationController
         end
     end
 
-    def private_and_owned
-        if @workout.is_private && !current_user.created_workouts.include?(@workout)
-            render :not_owned
-        end
-    end
 
-    def public_and_owned
-        if !@workout.is_private && !current_user.created_workouts.include?(@workout)
-            render :not_owned
-        end
-    end
 end

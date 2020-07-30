@@ -2,6 +2,8 @@ class ExercisesController < ApplicationController
     before_action :login_required
     before_action :set_exercise, only: [:show, :update, :edit, :destroy]
     before_action :set_workout, only: [:new, :create, :show, :update, :edit, :destroy]
+    before_action :private_and_owned, only: [:new, :show, :edit, :update, :destroy]
+    before_action :public_and_owned, only: [:new, :show, :edit, :update, :destroy]
 
     def new
         @exercise = Exercise.new
