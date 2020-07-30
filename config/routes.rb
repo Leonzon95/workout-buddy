@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   root 'application#home'
   get '/auth/:provider/callback', to: 'sessions#omniauth'
+  get '/public-workouts', to: 'workouts#public'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

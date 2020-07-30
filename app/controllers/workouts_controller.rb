@@ -37,6 +37,10 @@ class WorkoutsController < ApplicationController
         end
     end
 
+    def public
+        @workouts = Workout.all.where(is_private: false)
+    end
+
     def destroy
         current_user.workouts.delete(@workout)
         redirect_to root_path

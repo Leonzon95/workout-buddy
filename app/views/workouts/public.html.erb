@@ -1,0 +1,20 @@
+<h1>Public Workouts</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Categories</th>
+        <th>Number of Exercises</th>
+    </tr>
+    <% c = 1 %>
+    <% @workouts.each do |w| %>
+    <tr>
+        <th><%= c %></th>
+        <th><%= link_to w.name, workout_path(w) %></th>
+        <th><%= w.categories.map{|c| c.name}.join(" | ") %></th>
+        <th><%= w.exercises.length %></th>
+        <% c += 1 %>
+    </tr>
+    <% end %>
+</table>
