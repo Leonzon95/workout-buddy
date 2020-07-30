@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     include UsersHelper
+    protect_from_forgery with: :exception
     
     def home
         if logged_in?
@@ -9,4 +10,10 @@ class ApplicationController < ActionController::Base
             render :home
         end
     end
+
+    def route_not_found
+
+    end
+
+
 end

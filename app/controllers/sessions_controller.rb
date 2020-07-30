@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to root_path
         else
+            flash[:message] = user.errors.full_messages
             redirect_to root_path
         end
     end
