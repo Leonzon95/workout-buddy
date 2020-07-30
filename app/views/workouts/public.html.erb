@@ -1,5 +1,10 @@
 <h1>Public Workouts</h1>
 
+<%= form_with(url: '/categories', method: 'post') do |f| %>
+    <%= f.label :category_id, 'Filter by category' %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true%>
+    <%= f.submit 'Submit' %>
+<% end %>
 <table class="table table-bordered">
     <tr>
         <th>#</th>
@@ -7,14 +12,13 @@
         <th>Categories</th>
         <th>Number of Exercises</th>
     </tr>
-    <% c = 1 %>
-    <% @workouts.each do |w| %>
+    
+    <% @workouts.each.with_index(1) do |w ,i| %>
     <tr>
-        <th><%= c %></th>
+        <th><%= i %></th>
         <th><%= link_to w.name, workout_path(w) %></th>
         <th><%= w.categories.map{|c| c.name}.join(" | ") %></th>
         <th><%= w.exercises.length %></th>
-        <% c += 1 %>
     </tr>
     <% end %>
 </table>
