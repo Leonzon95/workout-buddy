@@ -7,12 +7,16 @@
     float: right;
 }
 
+.left{
+  float: left;
+}
+
 
 .simple-calendar {
     table {
         float: left;
-        position: relative;
-        left: -275px;
+        position: center;
+        left: 0px;
       -webkit-border-horizontal-spacing: 0px;
       -webkit-border-vertical-spacing: 0px;
       background-color: rgba(0, 0, 0, 0);

@@ -1,6 +1,6 @@
 <div class="jumbotron">
 <h1>Log In</h1>
-    <%= flash[:message] %><div><br>
+    <div class="text-danger"><%= flash[:message] %></div><br>
 
 <%= form_with(url: '/login') do |f| %>
     <%= f.label :username %>
