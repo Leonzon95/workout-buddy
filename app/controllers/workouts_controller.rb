@@ -3,7 +3,7 @@ class WorkoutsController < ApplicationController
     before_action :login_required
 
     def index
-
+        @workouts = current_user.workouts
     end
 
     def new
