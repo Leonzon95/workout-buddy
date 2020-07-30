@@ -1,4 +1,87 @@
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.right{
+    float: right;
+}
+.simple-calendar {
+    table {
+        float: left;
+        position: relative;
+        left: -275px;
+      -webkit-border-horizontal-spacing: 0px;
+      -webkit-border-vertical-spacing: 0px;
+      background-color: rgba(0, 0, 0, 0);
+      border: 1px solid rgb(0, 0, 0);;
+      border-collapse: collapse;
+      box-sizing: border-box;
+      max-width: 800px;
+      width: 100%;
+      height: 100%;
+    }
+  
+    tr {
+      border-collapse: collapse;
+    }
+  
+    th {
+      padding: 6px;
+      border-bottom: 2px solid rgb(0, 0, 0);;
+      border-collapse: collapse;
+      border-left: 1px solid rgb(0, 0, 0);;
+      border-right: 1px solid rgb(0, 0, 0);;`
+      border-top: 1px none rgb(0, 0, 0);;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  
+    td {
+      padding: 6px;
+      vertical-align: top;
+      width: 14%;
+  
+      border: 1px solid #ddd;
+      border-top-color: rgb(0, 0, 0);;
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-right-color: rgb(0, 0, 0);
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-bottom-color: rgb(0, 0, 0);
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-left-color: rgb(0, 0, 0);;
+      border-left-style: solid;
+      border-left-width: 1px;
+    }
+
+    .calendar-heading {
+        font-size: 135%;
+    }
+    .calendar-heading a {
+        color: blue;
+    }
+  
+    .day {
+      height: 80px;
+    }
+  
+ 
+  
+    .today {
+      background: #FFFFC0
+    }
+  
+ 
+  
+    .prev-month {
+      background: #DDD;
+    }
+    .next-month {
+      background: #DDD;
+    }
+   
+  }
