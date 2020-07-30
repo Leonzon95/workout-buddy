@@ -11,7 +11,7 @@
 
   <body>
 
-  <%= render 'partials/header'%>
+  <%= render 'partials/header' if logged_in?%>
 
     <div class="container">
       <%= yield %>
