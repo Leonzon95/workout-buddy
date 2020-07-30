@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     has_many :scheduled_workouts
     has_many :workouts, through: :scheduled_workouts
-    has_many :exercises
+    has_many :created_workouts, foreign_key: "user_id", class_name: "Workout"
     has_secure_password
 
     validates :name, presence: true

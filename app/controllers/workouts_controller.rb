@@ -5,7 +5,7 @@ class WorkoutsController < ApplicationController
 
     def index
 
-        @workouts = current_user.workouts.group(:id)
+        @workouts = current_user.created_workouts.group(:id)
     end
 
     def new
@@ -14,9 +14,7 @@ class WorkoutsController < ApplicationController
     end
 
     def create
-        # @workout = current_user.workouts.build(workout_params)
-        @workout = Workout.new(workout_params)
-        current_user.workouts << @workout
+        @workout = current_user.created_workouts.build(workout_params)
         if @workout.save
             redirect_to workout_path(@workout)
         else
@@ -51,14 +49,13 @@ class WorkoutsController < ApplicationController
     end
 
     def handle_record_not_found
-        # Send it to the view that is specific for Post not found
         render :not_found
     end
 
     private
 
     def workout_params
-        params.require(:workout).permit(:name, :is_private, category_ids:[], exercises_attributes: [:name, :reps, :sets, :user_id, :id])
+        params.require(:workout).permit(:name, :is_private, category_ids:[], exercises_attributes: [:name, :reps, :sets, :id])
     end
 
     def set_workout

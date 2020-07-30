@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_170346) do
+ActiveRecord::Schema.define(version: 2020_07_30_204353) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -25,23 +25,13 @@ ActiveRecord::Schema.define(version: 2020_07_29_170346) do
     t.index ["workout_id"], name: "index_category_workouts_on_workout_id"
   end
 
-  create_table "exercise_workouts", force: :cascade do |t|
-    t.integer "exercise_id", null: false
-    t.integer "workout_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["exercise_id"], name: "index_exercise_workouts_on_exercise_id"
-    t.index ["workout_id"], name: "index_exercise_workouts_on_workout_id"
-  end
-
   create_table "exercises", force: :cascade do |t|
     t.string "name"
     t.string "reps"
     t.string "sets"
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_exercises_on_user_id"
+    t.integer "workout_id"
   end
 
   create_table "scheduled_workouts", force: :cascade do |t|
@@ -69,13 +59,11 @@ ActiveRecord::Schema.define(version: 2020_07_29_170346) do
     t.boolean "is_private", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   add_foreign_key "category_workouts", "categories"
   add_foreign_key "category_workouts", "workouts"
-  add_foreign_key "exercise_workouts", "exercises"
-  add_foreign_key "exercise_workouts", "workouts"
-  add_foreign_key "exercises", "users"
   add_foreign_key "scheduled_workouts", "users"
   add_foreign_key "scheduled_workouts", "workouts"
 end
