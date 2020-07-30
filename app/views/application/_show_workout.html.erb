@@ -1,0 +1,14 @@
+<h3>Your <%=pluralize(workouts.length, 'Workout')%> Today:</h3>
+<ul>
+<% workouts.each do |w| %>
+    <li>
+    <h4><%=link_to w.workout.name, workout_path(w) %></h4>
+    Exercises: <br>
+    <ul>
+    <% w.workout.exercises.each do |e| %>
+        <li><%= e.name %></li>
+    <% end %>
+    </ul>
+    </li>
+<% end %>
+</ul>
