@@ -24,12 +24,13 @@ Private: <%= @workout.is_private %>
                 <li>Reps/Time: <%= exercise.reps %></li>
                 <li>Sets: <%= exercise.sets %></li>
 
-                <%= link_to 'Edit Exercise', edit_workout_exercise_path(@workout, exercise) %><br>
-                <%= link_to 'Delete Exercise', [@workout, exercise], method: :delete %><br>
+                <%= display_edit_for_exercise(@workout, exercise) %><br>
+
+                <%= display_delete_for_exercise(@workout, exercise) %><br>
 
             </ul>
         </li>
     <% end %>
 </ul>
 
-<%= link_to 'Add Exercise', new_workout_exercise_path(@workout) %>
+<%= display_add_exersice(@workout) %>
