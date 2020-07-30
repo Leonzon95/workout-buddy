@@ -1,6 +1,7 @@
 class ScheduledWorkoutsController < ApplicationController
     before_action :set_workout
-
+    before_action :private_and_owned
+    
     def new
         @scheduled_workout = ScheduledWorkout.new
     end
