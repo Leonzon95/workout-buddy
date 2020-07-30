@@ -1,6 +1,10 @@
 class WorkoutsController < ApplicationController
     before_action :set_workout, only: [:show, :edit, :update, :destroy]
+    
+    before_action :private_and_owned, only: [:show, :edit, :update]
+    before_action :public_and_owned, only: [:edit, :update]
     before_action :login_required
+
     rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
 
     def index
@@ -22,7 +26,7 @@ class WorkoutsController < ApplicationController
     end
 
     def show
-        @workout = Workout.find(params[:id])
+
     end
 
     def edit
@@ -67,5 +71,20 @@ class WorkoutsController < ApplicationController
 
     def set_workout
         @workout = Workout.find_by_id(params[:id])
+        if !@workout
+            raise ActiveRecord::RecordNotFound
+        end
+    end
+
+    def private_and_owned
+        if @workout.is_private && !current_user.created_workouts.include?(@workout)
+            render :not_owned
+        end
+    end
+
+    def public_and_owned
+        if !@workout.is_private && !current_user.created_workouts.include?(@workout)
+            render :not_owned
+        end
     end
 end
