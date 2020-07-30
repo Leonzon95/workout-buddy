@@ -1,0 +1,17 @@
+<fieldset>
+    <%= s.hidden_field :user_id, value: current_user.id %>
+    <p>
+    <%= s.hidden_field :id %>
+    <%= s.label :name, 'Name:' %>
+    <%= s.text_field :name %>
+        
+    <%= s.label :reps, 'Reps/Time:' %>
+    <%= s.text_field :reps %>
+
+    <%= s.label :sets, 'Sets:' %>
+    <%= s.text_field :sets %>
+        
+    <%= s.hidden_field :_destroy %>
+    <%= link_to 'delete', '#', class: 'remove_fields' %>
+    </p>
+</fieldset>

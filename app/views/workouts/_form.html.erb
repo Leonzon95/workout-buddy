@@ -8,20 +8,12 @@
 
     <%= f.radio_button :is_private, false %>
     <%= f.label :is_private, 'Public' %><br>
+
     <h4>Exercises</h2>
-    <%= f.fields_for :exercises do |s| %>
-        <%= s.hidden_field :user_id, value: current_user.id %>
-        <p>
-        <%= s.hidden_field :id %>
-        <%= s.label :name, 'Name:' %>
-        <%= s.text_field :name %>
-        
-        <%= s.label :reps, 'Reps/Time:' %>
-        <%= s.text_field :reps %>
 
-        <%= s.label :sets, 'Sets:' %>
-        <%= s.text_field :sets %></p>
+    <%= f.fields_for :exercises do |builder| %>
+        <%= render partial: 'exercise_fields', locals: {s: builder} %>
     <% end %>
-
+    <%= link_to_add_fields "Add Exercise", f, :exercises %>
     <%= f.submit %>
 <% end %>
