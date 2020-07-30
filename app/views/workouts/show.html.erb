@@ -1,8 +1,8 @@
 <h2> <%= @workout.name %></h2>
 
-<%= display_edit(@workout) %><br>
+<%= display_edit_workout(@workout) %><br>
 
-<%= display_delete (@workout) %><br>
+<%= display_delete_workout (@workout) %><br>
 
 <%= link_to 'Add to Calendar', new_workout_scheduled_workout_path(@workout) %><br>
 
