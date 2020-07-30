@@ -1,12 +1,13 @@
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 .right{
     float: right;
 }
+
+
 .simple-calendar {
     table {
         float: left;
@@ -15,7 +16,7 @@
       -webkit-border-horizontal-spacing: 0px;
       -webkit-border-vertical-spacing: 0px;
       background-color: rgba(0, 0, 0, 0);
-      border: 1px solid rgb(0, 0, 0);;
+      border: 1px solid rgb(0, 0, 0);
       border-collapse: collapse;
       box-sizing: border-box;
       max-width: 800px;
@@ -32,7 +33,7 @@
       border-bottom: 2px solid rgb(0, 0, 0);;
       border-collapse: collapse;
       border-left: 1px solid rgb(0, 0, 0);;
-      border-right: 1px solid rgb(0, 0, 0);;`
+      border-right: 1px solid rgb(0, 0, 0);
       border-top: 1px none rgb(0, 0, 0);;
       box-sizing: border-box;
       text-align: center;

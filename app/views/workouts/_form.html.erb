@@ -10,8 +10,10 @@
     <%= f.label :is_private, 'Public' %><br>
     <h4>Exercises</h2>
     <%= f.fields_for :exercises do |s| %>
-         <%= s.hidden_field :user_id, value: current_user.id %>
-        <p><%= s.label :name, 'Name:' %>
+        <%= s.hidden_field :user_id, value: current_user.id %>
+        <p>
+        <%= s.hidden_field :id %>
+        <%= s.label :name, 'Name:' %>
         <%= s.text_field :name %>
         
         <%= s.label :reps, 'Reps/Time:' %>
