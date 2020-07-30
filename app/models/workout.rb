@@ -8,4 +8,8 @@ class Workout < ApplicationRecord
   validates :name, presence: true
 
   accepts_nested_attributes_for :exercises, allow_destroy: true
+
+  def self.public_workouts
+    self.all.where(is_private: false)
+  end
 end

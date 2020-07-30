@@ -4,8 +4,7 @@ class WorkoutsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
 
     def index
-
-        @workouts = current_user.created_workouts.group(:id)
+        @workouts = current_user.created_workouts
     end
 
     def new
@@ -39,8 +38,7 @@ class WorkoutsController < ApplicationController
     end
 
     def public
-        #put in model
-        @workouts = Workout.all.where(is_private: false)
+        @workouts = Workout.public_workouts
     end
 
     def destroy
