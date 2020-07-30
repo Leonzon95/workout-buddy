@@ -8,11 +8,9 @@
 
 
 
-Categories: <% @workout.categories.each do |c| %>
-                <%= c.name %>
-            <% end %><br>
+Categories: <%= display_categories_from_workout(@workout) %><br>
 
-Private: <%= @workout.is_private %>
+<%= @workout.is_private %>
 
 <h4>Exercises</h2>
 

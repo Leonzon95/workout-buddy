@@ -16,4 +16,8 @@ module WorkoutsHelper
             link_to 'Delete Workout', workout, method: :delete 
         end
     end
+
+    def display_is_private
+        
+    end
 end
