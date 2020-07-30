@@ -1,3 +1,10 @@
+<h1>My Workouts</h1>
+
+<%= link_to 'Create a new Workout plan', new_workout_path %>
+<p>
+<ul>
 <% @workouts.each do |w| %>
-    <%= link_to w.name, workout_path(w) %>
+    <li><%= link_to w.name, workout_path(w) %></li>
 <% end %>
+</ul>
+</p>
