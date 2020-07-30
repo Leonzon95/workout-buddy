@@ -7,7 +7,7 @@ class Workout < ApplicationRecord
   belongs_to :user
   validates :name, presence: true
 
-  accepts_nested_attributes_for :exercises, allow_destroy: true
+  accepts_nested_attributes_for :exercises, allow_destroy: true, reject_if: proc { |attributes| attributes['name'].blank? }
 
   def self.public_workouts
     self.all.where(is_private: false)

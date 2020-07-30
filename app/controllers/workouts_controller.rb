@@ -42,8 +42,13 @@ class WorkoutsController < ApplicationController
     end
 
     def destroy
-        current_user.workouts.delete(@workout)
-        redirect_to root_path
+        if current_user.created_workouts.include?(@workout)
+            @workout.destroy
+            redirect_to root_path
+        else
+            current_user.workouts.delete(@workout)
+            redirect_to root_path
+        end
     end
 
     def handle_record_not_found
