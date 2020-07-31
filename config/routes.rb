@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :scheduled_workouts, only: [:new, :create]
   end
 
-
+  delete '/scheduled-workouts/:id', to: 'scheduled_workouts#destroy', as: 'delete_from_calendar'
 
   get '/signup', to: 'users#new'
   post 'signup', to: 'users#create'

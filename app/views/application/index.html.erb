@@ -4,7 +4,8 @@
 
   <% scheduled_workouts.each do |scheduled_workout| %>
     <div>
-      <%= link_to scheduled_workout.workout.name, workout_path(scheduled_workout.workout) %>
+      <%= link_to scheduled_workout.workout.name, workout_path(scheduled_workout.workout) %><br>
+      <%= link_to 'remove from calendar', delete_from_calendar_path(scheduled_workout), method: 'delete' %>
     </div>
   <% end %>
 <% end %>
