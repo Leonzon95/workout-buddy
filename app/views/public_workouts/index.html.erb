@@ -3,7 +3,7 @@
 <%= form_with(url: '/categories', method: 'post') do |f| %>
     <%= f.label :category_id, 'Filter by category' %>
     <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true%>
-    <%= f.submit 'Submit' %>
+    <%= f.submit 'Submit', class: 'btn btn-primary btn-xs' %>
 <% end %>
 
 <table class="table table-bordered">
