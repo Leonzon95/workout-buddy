@@ -13,7 +13,7 @@ class WorkoutsController < ApplicationController
 
     def new
         @workout = Workout.new
-        3.times {@workout.exercises.build}
+        5.times {@workout.exercises.build}
     end
 
     def create
@@ -39,10 +39,6 @@ class WorkoutsController < ApplicationController
         else
             render :edit
         end
-    end
-
-    def public
-        @workouts = Workout.public_workouts
     end
 
     def scheduled

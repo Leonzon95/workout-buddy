@@ -5,6 +5,7 @@
     <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true%>
     <%= f.submit 'Submit' %>
 <% end %>
+
 <table class="table table-bordered">
     <tr>
         <th>#</th>

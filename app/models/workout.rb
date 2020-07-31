@@ -12,6 +12,4 @@ class Workout < ApplicationRecord
   def self.public_workouts
     self.all.where(is_private: false)
   end
-
-  
 end
