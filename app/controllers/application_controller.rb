@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     include UsersHelper
+    include ApplicationHelper
     protect_from_forgery with: :exception
     helper_method :private_and_owned
     helper_method :public_and_owned
