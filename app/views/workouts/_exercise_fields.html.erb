@@ -1,14 +1,22 @@
-<fieldset>
-    <%= s.hidden_field :user_id, value: current_user.id %>
-    <p>
-    <%= s.hidden_field :id %>
-    <%= s.label :name, 'Name:' %>
-    <%= s.text_field :name %>
-        
-    <%= s.label :reps, 'Reps/Time:' %>
-    <%= s.text_field :reps %>
+<div class="col-sm-offset-2 col-sm-10">
+    <fieldset class="form-inline">
 
-    <%= s.label :sets, 'Sets:' %>
-    <%= s.text_field :sets %>
-    </p>
-</fieldset>
+        <%= s.hidden_field :id %>
+        <div class="form-group">
+            <%= s.label :name, 'Name:' %>
+            <%= s.text_field :name, class: 'form-control' %>
+        </div>
+            
+        <div class="form-group">
+            <%= s.label :reps, 'Reps/Time:', class: 'exersice_label' %>
+            <%= s.text_field :reps, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+            <%= s.label :sets, 'Sets:', class: 'exersice_label' %>
+            <%= s.text_field :sets, class:'form-control' %>
+        </div>
+
+    </fieldset>
+</div>
+

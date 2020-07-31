@@ -10,7 +10,23 @@
 .left{
   float: left;
 }
+.checkbox__categories {
+  padding-top: 7px;
+}
 
+.checkbox__categories label {
+  padding-right: 25px;
+  padding-left: 5px;
+  font-weight: normal;
+}
+
+ .exersice_label {
+  padding-left: 30px;
+}
+
+.form-inline{
+  padding-bottom: 15px;
+}
 
 
 .google_signin img {
