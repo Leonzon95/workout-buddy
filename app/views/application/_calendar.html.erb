@@ -1,0 +1,10 @@
+<%= month_calendar events: scheduled_workouts do |date, scheduled_workouts| %>
+  <%= date.day %>
+
+  <% scheduled_workouts.each do |scheduled_workout| %>
+    <div>
+      <%= link_to scheduled_workout.workout.name, workout_path(scheduled_workout.workout) %><br>
+      <%= link_to 'remove', delete_from_calendar_path(scheduled_workout), method: 'delete', class: 'remove_calendar' %>
+    </div>
+  <% end %>
+<% end %>

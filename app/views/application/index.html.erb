@@ -1,17 +1,20 @@
+<div class="form__padding">
+  <div class="container">
+    <div class="row">
+    
+      <div class="col-md-6">
+        
+        <div class="center__text">
+          <h1>Your Calendar</h1>
+        </div>
+        <%= render partial: 'calendar', locals: {scheduled_workouts: @scheduled_workouts} %>
+      </div>
 
-<%= month_calendar events: @scheduled_workouts do |date, scheduled_workouts| %>
-  <%= date.day %>
+      <div class="col-md-6">
+      <%= display_todays_workout %>
+      </div>
 
-  <% scheduled_workouts.each do |scheduled_workout| %>
-    <div>
-      <%= link_to scheduled_workout.workout.name, workout_path(scheduled_workout.workout) %><br>
-      <%= link_to 'remove', delete_from_calendar_path(scheduled_workout), method: 'delete', class: 'remove_calendar' %>
     </div>
-  <% end %>
-<% end %>
-
-
-<%= display_todays_workout %>
-
-
+  </div>
+</div>
 

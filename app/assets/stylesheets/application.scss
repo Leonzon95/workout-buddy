@@ -2,7 +2,9 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+.center__text{
+  text-align: center;;
+}
 .home_img{
   background-image: url('home_img.jpg'); 
   background-size: cover;

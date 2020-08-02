@@ -4,7 +4,7 @@ module ScheduledWorkoutsHelper
         if !workouts.empty?
             render partial: 'show_workout', locals: {workouts: workouts}
         else
-            tag.h1("You are resting today!")
+            render partial: 'rest'
         end
     end
 end
