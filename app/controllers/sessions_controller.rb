@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     before_action :login_required, only: [:destroy]
     
     def new
-
+        
     end
 
     def create
