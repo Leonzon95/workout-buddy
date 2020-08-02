@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
         end
     end
 
-    def test
+    def about
 
     end
 end

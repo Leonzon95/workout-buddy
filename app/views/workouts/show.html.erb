@@ -12,9 +12,9 @@
 
                     <%= link_to 'Add to Calendar', new_workout_scheduled_workout_path(@workout) %><br>
 
-                    Categories: <%= display_categories_from_workout(@workout) %><br>
-
-                    <%= @workout.is_private %>
+                    <%=  display_is_private(@workout) %><br>
+                    
+                     Categories: <%= display_categories_from_workout(@workout) %><br>
 
                     <h4>Exercises</h2>
 

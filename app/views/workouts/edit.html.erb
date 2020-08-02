@@ -1,5 +1,14 @@
-<div class="col-sm-offset-2 col-sm-10">
-    <h1>Edit Workout</h1>
-    <%= render partial: 'partials/errors', locals: {obj: @workout} %>
+<div class="form__padding">
+    <div class="container">
+        <div class="col-sm-offset-2 col-sm-10">
+            <h1>Edit Workout</h1>
+            <div class='container-fluid'>
+                <%= render partial: 'partials/errors', locals: {obj: @workout} %>
+            </div>
+        </div>
+
+        <div class='container-fluid'>
+            <%= render partial: 'form', locals: {workout: @workout} %>
+        </div>
+    </div>
 </div>
-<%= render partial: 'form', locals: {workout: @workout} %>

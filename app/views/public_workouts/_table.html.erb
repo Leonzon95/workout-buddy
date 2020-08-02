@@ -1,0 +1,17 @@
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Categories</th>
+        <th>Number of Exercises</th>
+    </tr>
+    
+    <% workouts.each.with_index(1) do |w ,i| %>
+    <tr>
+        <th><%= i %></th>
+        <th><%= link_to w.name, workout_path(w) %></th>
+        <th><%= w.categories.map{|c| c.name}.join(" | ") %></th>
+        <th><%= w.exercises.length %></th>
+    </tr>
+    <% end %>
+</table>

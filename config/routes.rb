@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/scheduled-workouts', to: 'workouts#scheduled'
   post '/categories', to: 'public_workouts#filter'
   get 'categories/:id/public-workouts', to: 'public_workouts#show', as: 'filter'
-  # get 'about', to: 'application#about'
+  get 'about', to: 'application#about'
   
   
   match '*unmatched', to: 'application#route_not_found', via: :all

@@ -14,12 +14,14 @@ module WorkoutsHelper
     def display_delete_workout(workout)
         if current_user.created_workouts.include?(workout)
             link_to 'Delete Workout', workout, method: :delete 
-        # elsif current_user.workouts.include?(workout)
-        #     link_to 'Remove from Calendar', workout, method: :delete
         end
     end
 
-    def display_is_private
-        
+    def display_is_private(workout)
+        if workout.is_private
+            "This workout is private"
+        else
+            "This workout is public"
+        end
     end
 end
