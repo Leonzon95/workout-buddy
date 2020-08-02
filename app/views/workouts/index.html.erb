@@ -1,6 +1,21 @@
-<h1>My Workouts</h1>
+<div class="form__padding">
+    <div class="container">
+        <div class="row">
 
-<%= link_to 'Create a new Workout plan', new_workout_path %>
-<p>
-<%= render partial: 'workout_name_link', locals: {workouts: @workouts} %>
-</p>
+            <div class="col-md-6">
+            <h1>My Workouts</h1>
+
+                <%= link_to 'Create a new workout plan', new_workout_path %>
+                <p>
+                <%= render partial: 'workout_name_link', locals: {workouts: @workouts} %>
+                </p>
+                
+            </div>
+
+            <div class="col-md-6">
+                <%= image_tag 'tire_workout.jpg' %>
+            </div>
+
+        </div>
+    </div>
+</div>
