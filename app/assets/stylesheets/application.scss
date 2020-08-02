@@ -10,9 +10,11 @@
   height: 900px;
 }
 
+.form__padding{
+  padding-top: 70px;
+}
 .github img{
   height: 20px;
-  
 }
 
 img {
@@ -48,7 +50,9 @@ img {
   font-size: smaller;
 }
 
-
+.google_signin{
+  padding-left: 110px;
+}
 .google_signin img {
   width: 230px;
   height: 100%;

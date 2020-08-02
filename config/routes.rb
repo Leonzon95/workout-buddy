@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'categories/:id/public-workouts', to: 'public_workouts#show', as: 'filter'
   # get 'about', to: 'application#about'
   
-  get '/test', to: 'application#test'
+  
   match '*unmatched', to: 'application#route_not_found', via: :all
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
