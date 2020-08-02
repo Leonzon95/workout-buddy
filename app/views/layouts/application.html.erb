@@ -15,7 +15,25 @@
  
     
       <%= yield %>
-   
+  
+  <div class="container">
+    <div class="row">
+      <hr>
+      <footer>
+        <div class="col-md-4">
+        <p>© 2020 WorkoutBuddy, Inc.</p>
+        </div>
+        <div class="col-md-4">
+        <p></p>
+        </div>
+        <div class="col-md-4">
+        <p>Created by Leonardo Briones <%= link_to image_tag('github.png'), 'https://github.com/Leonzon95/workout-buddy', class: 'github' %></p>
+        </div>
 
+      </footer>
+      
+    </div>
+  </div>
   </body>
+ 
 </html>
