@@ -1,0 +1,16 @@
+<ul>
+    <% workout.exercises.each do |exercise| %>
+        <li>
+            <ul>
+                <li><h4><%= exercise.name %></h4></li>
+                <li>Reps/Time: <%= exercise.reps %></li>
+                <li>Sets: <%= exercise.sets %></li>
+
+                <%= display_edit_for_exercise(workout, exercise) %><br>
+
+                <%= display_delete_for_exercise(workout, exercise) %><br>
+
+            </ul>
+        </li>
+    <% end %>
+</ul>

@@ -1,3 +1,15 @@
-<h1>My Scheduled Workouts</h1>
+<div class="container">
+    <div class="row">
+    
+        <div class="col-md-6">
+            <div class="form__padding">
+            <h1>My Scheduled Workouts</h1>
+            <%= render partial: 'workout_name_link', locals: {workouts: @workouts} %>
+            </div>
+        </div>
 
-<%= render partial: 'workout_name_link', locals: {workouts: @workouts} %>
+        <div class="col-md-6">
+            <%= image_tag 'hang_workout.jpg' %>
+        </div>
+    </div>
+</div>

@@ -1,34 +1,32 @@
-<h2> <%= @workout.name %></h2>
 
-<%= display_edit_workout(@workout) %><br>
+    <div class="container">    
+        <div class="row">
 
-<%= display_delete_workout (@workout) %><br>
+            <div class="col-md-6">
+                <div class="form__padding">
+                    <h2> <%= @workout.name %></h2>
 
-<%= link_to 'Add to Calendar', new_workout_scheduled_workout_path(@workout) %><br>
+                    <%= display_edit_workout(@workout) %><br>
 
+                    <%= display_delete_workout (@workout) %><br>
 
+                    <%= link_to 'Add to Calendar', new_workout_scheduled_workout_path(@workout) %><br>
 
-Categories: <%= display_categories_from_workout(@workout) %><br>
+                    Categories: <%= display_categories_from_workout(@workout) %><br>
 
-<%= @workout.is_private %>
+                    <%= @workout.is_private %>
 
-<h4>Exercises</h2>
+                    <h4>Exercises</h2>
 
-<ul>
-    <% @workout.exercises.each do |exercise| %>
-        <li>
-            <ul>
-                <li><h4><%= exercise.name %></h4></li>
-                <li>Reps/Time: <%= exercise.reps %></li>
-                <li>Sets: <%= exercise.sets %></li>
+                    <%= render partial: 'show_exercises', locals: {workout: @workout} %>
 
-                <%= display_edit_for_exercise(@workout, exercise) %><br>
+                    <%= display_add_exersice(@workout) %>
+                </div>
+            </div>
 
-                <%= display_delete_for_exercise(@workout, exercise) %><br>
+            <div class="col-md-6">
+                <%= image_tag 'climbing_rope.jpg' %>
+            </div>
 
-            </ul>
-        </li>
-    <% end %>
-</ul>
-
-<%= display_add_exersice(@workout) %>
+        </div>
+    </div>
