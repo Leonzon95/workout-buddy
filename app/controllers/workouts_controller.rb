@@ -51,8 +51,6 @@ class WorkoutsController < ApplicationController
             redirect_to root_path
         else
             render 'application/not_owned'
-            # current_user.workouts.delete(@workout)
-            # redirect_to root_path
         end
     end
 
