@@ -29,4 +29,8 @@ class ApplicationController < ActionController::Base
             render :not_owned
         end
     end
+
+    def test
+
+    end
 end
