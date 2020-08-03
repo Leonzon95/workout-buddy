@@ -4,6 +4,7 @@ class ScheduledWorkoutsController < ApplicationController
     
     def new
         @scheduled_workout = ScheduledWorkout.new
+        @scheduled_workouts = current_user.scheduled_workouts
     end
 
     def create

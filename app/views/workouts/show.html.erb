@@ -1,9 +1,9 @@
-
+<div class="form__padding">
     <div class="container">    
         <div class="row">
 
             <div class="col-md-6">
-                <div class="form__padding">
+                
                     <h2> <%= @workout.name %></h2>
 
                     <%= display_edit_workout(@workout) %><br>
@@ -21,12 +21,15 @@
                     <%= render partial: 'show_exercises', locals: {workout: @workout} %>
 
                     <%= display_add_exersice(@workout) %>
-                </div>
+                
             </div>
 
             <div class="col-md-6">
-                <%= image_tag 'climbing_rope.jpg' %>
+                <div class="img__down">
+                    <%= image_tag 'fitness_stats.svg' %>
+                </div>
             </div>
 
         </div>
     </div>
+</div>

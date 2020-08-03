@@ -2,6 +2,10 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.img__down{
+  padding-top: 100px;
+}
 .center__text{
   text-align: center;;
 }
