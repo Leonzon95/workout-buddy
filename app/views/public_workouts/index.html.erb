@@ -5,6 +5,10 @@
 
         <%= render partial: 'filter_for' %>
         
+        <div class="right">
+            <%= link_to 'Workouts with most popular category', most_popular_path %>
+        </div>
+        
         <%= render partial: 'table', locals: {workouts: @workouts} %>
         
 

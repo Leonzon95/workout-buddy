@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/scheduled-workouts', to: 'workouts#scheduled'
   post '/categories', to: 'public_workouts#filter'
+  # post '/most-popular-category', to: 'public_workouts#most_popular'
+  get '/most-popular-category/public-workouts', to: 'public_workouts#most_popular', as: 'most_popular'
   get 'categories/:id/public-workouts', to: 'public_workouts#show', as: 'filter'
   get 'about', to: 'application#about'
   match '*unmatched', to: 'application#route_not_found', via: :all

@@ -18,4 +18,10 @@ class PublicWorkoutsController < ApplicationController
         @workouts = Category.filter_workouts_by_categories(category)
         render :index
     end
+
+    def most_popular
+        category = Category.most_popular_category
+        @workouts = Category.filter_workouts_by_categories(category[0])
+        render :index
+    end
 end
