@@ -9,6 +9,10 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     
 
+    def scheduled_group_by_id
+        self.workouts.group('id') 
+    end
+
     def self.from_omniauth(response)
         User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |u|
             u.username = response[:info][:email]

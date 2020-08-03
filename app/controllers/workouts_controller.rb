@@ -42,7 +42,7 @@ class WorkoutsController < ApplicationController
     end
 
     def scheduled
-        @workouts = current_user.workouts.group('id')
+        @workouts = current_user.scheduled_group_by_id
     end
 
     def destroy
