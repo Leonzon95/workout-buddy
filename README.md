@@ -1,6 +1,6 @@
-# Guitar Forum
+# Workout Buddy
 
-It is a forum where guitar players and enthusiast can share ideas, ask quiestions, or give tips within the community.
+This app helps people create workout and add them to their calendar. They can also share their created workouts for anyone else to add to their calendar
 
 ## Getting Started
 
