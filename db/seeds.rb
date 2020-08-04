@@ -6,3 +6,12 @@
 
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Category.create(name: 'Abs')
+Category.create(name: 'Legs')
+Category.create(name: 'Shoulders')
+Category.create(name: 'Cardio') 
+Category.create(name: 'Triceps')
+Category.create(name: 'Biceps') 
+Category.create(name: 'Back')
+Category.create(name: 'Chest')
+
