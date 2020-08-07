@@ -7,13 +7,13 @@ module WorkoutsHelper
 
     def display_edit_workout(workout)
         if current_user.created_workouts.include?(workout)
-            link_to 'Edit Workout', edit_workout_path(workout)
+            link_to 'Edit Workout', edit_workout_path(workout), class: 'btn btn-default btn-xs'
         end
     end
 
     def display_delete_workout(workout)
         if current_user.created_workouts.include?(workout)
-            link_to 'Delete Workout', workout, method: :delete 
+            link_to 'Delete Workout', workout, method: :delete, class: 'btn btn-primary btn-xs'
         end
     end
 

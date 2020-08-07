@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-light navbar-fixed-top" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-fixed-top bg-primary" >
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
       </button>
       
-      <a class="navbar-brand" href="/">WorkoutBuddy</a>
+      <a class="navbar-brand text__white" href="/">WorkoutBuddy</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,19 +18,19 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
       <% if logged_in? %>
-        <li class="active"><a href="/workouts">My Workouts<span class="sr-only">(current)</span></a></li>
-        <li><a href="/scheduled-workouts">My Scheduled Workouts</a></li>
-        <li><a href="/public-workouts">Public Workouts</a></li>
+        <li class="active"><a href="/workouts" class="text__white">My Workouts<span class="sr-only">(current)</span></a></li>
+        <li><a href="/scheduled-workouts" class="text__white">My Scheduled Workouts</a></li>
+        <li><a href="/public-workouts" class="text__white">Public Workouts</a></li>
       <% end %>
       </ul>
       
     
       <ul class="nav navbar-nav navbar-right">
-       <li><%= link_to 'About Us','/about' %></li>
+       <li><%= link_to 'About Us','/about', class: 'text__white' %></li>
         <% if logged_in? %>
-          <li><%= link_to 'Log Out','/logout', method: 'delete' %></li>
+          <li><%= link_to 'Log Out','/logout', method: 'delete', class: 'text__white' %></li>
         <% else %>
-           <li><%= link_to 'Log In','/login' %></li>
+           <li><%= link_to 'Log In','/login', class: 'text__white' %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

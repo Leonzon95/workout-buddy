@@ -3,6 +3,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.padding__bottom{
+  padding-bottom: 10px;
+}
+.text__white{
+  color: white;
+}
 .img__down{
   padding-top: 100px;
 }
@@ -30,6 +36,8 @@ img {
 .right{
     float: right;
 }
+
+
 
 .left{
   float: left;

@@ -5,23 +5,34 @@
             <div class="col-md-6">
                 
                     <h2> <%= @workout.name %></h2>
-
-                    <%= display_edit_workout(@workout) %><br>
-
-                    <%= display_delete_workout (@workout) %><br>
-
-                    <%= link_to 'Add to Calendar', new_workout_scheduled_workout_path(@workout) %><br>
-
-                    <%=  display_is_private(@workout) %><br>
                     
-                     Categories: <%= display_categories_from_workout(@workout) %><br>
+                        <div class="row padding__bottom">
+                            <div class="col-md-3 ">
+                                <%= link_to 'Add to Calendar', new_workout_scheduled_workout_path(@workout), class: 'btn btn-primary btn-xs' %>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <%= display_edit_workout(@workout) %>
+                            </div>
+                            <div class="col-sm-2">
+                                <%= display_delete_workout (@workout) %>
+                            </div>
+                        </div>
+                   
+                    
 
-                    <h4>Exercises</h2>
+                    <h4><%=  display_is_private(@workout) %><br>
+                    
+                    Categories: <%= display_categories_from_workout(@workout) %><br></h4>
+
+                    <h3>Exercises</h3>
 
                     <%= render partial: 'show_exercises', locals: {workout: @workout} %>
 
                     <%= display_add_exersice(@workout) %>
-                
+                    
             </div>
 
             <div class="col-md-6">
